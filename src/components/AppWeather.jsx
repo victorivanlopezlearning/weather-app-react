@@ -1,6 +1,11 @@
+import Form from "./Form";
 
 export default function AppWeather() {
   return (
-    <h1>App Weather</h1>
+    <>
+      <main className="two-columns">
+        <Form />
+      </main>
+    </>
   )
 }

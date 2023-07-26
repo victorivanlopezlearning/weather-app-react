@@ -16,11 +16,16 @@ export const WeatherProvider = ({ children }) => {
     })
   }
 
+  const getWeather = data => {
+    console.log(data);
+  }
+
   return (
     <WeatherContext.Provider
       value={{
         search,
         createSearch,
+        getWeather,
       }}
     >
       {children}

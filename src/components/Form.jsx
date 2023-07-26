@@ -4,7 +4,7 @@ import ErrorMessage from "./ErrorMessage";
 
 export default function Form() {
 
-  const { search, createSearch } = useWeather();
+  const { search, createSearch, getWeather } = useWeather();
   const { country, city } = search;
   const [error, setError] = useState(false);
 
@@ -16,6 +16,7 @@ export default function Form() {
       return;
     }
     setError(false);
+    getWeather(search);
   }
 
   return (

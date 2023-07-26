@@ -106,10 +106,20 @@ input[type="submit"]:hover {
   background-color: #0369a1;
 }
 
-
 .loading {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.error {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.error p {
+  margin: 1rem 0 0 0;
+  font-size: 1.8rem;
+  color: #970a0a;
+  font-weight: 700;
 }

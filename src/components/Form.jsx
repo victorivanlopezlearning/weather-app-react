@@ -1,9 +1,22 @@
+import { useState } from "react";
 import useWeather from "../hooks/useWeather";
+import ErrorMessage from "./ErrorMessage";
 
 export default function Form() {
 
   const { search, createSearch } = useWeather();
   const { country, city } = search;
+  const [error, setError] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (Object.values(search).includes('')) {
+      setError(true);
+      return;
+    }
+    setError(false);
+  }
 
   return (
     <div className="container">
@@ -45,6 +58,7 @@ export default function Form() {
           value="Consultar Clima"
         />
       </form>
+      {error && <ErrorMessage message='Todos los campos son obligatorios' />}
     </div>
   )
 }

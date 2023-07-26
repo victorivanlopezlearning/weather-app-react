@@ -1,13 +1,22 @@
+import useWeather from "../hooks/useWeather";
 
 export default function Form() {
+
+  const { search, createSearch } = useWeather();
+  const { country, city } = search;
+
   return (
     <div className="container">
-      <form>
+      <form
+        onSubmit={handleSubmit}
+      >
         <div className="field">
           <label htmlFor="country">País</label>
           <select
             name="country"
             id="country"
+            onChange={createSearch}
+            value={country}
           >
             <option value="">-- Seleccione País --</option>
             <option value="US">Estados Unidos</option>
@@ -26,12 +35,14 @@ export default function Form() {
             type="text"
             name="city"
             id="city"
+            onChange={createSearch}
+            value={city}
           />
         </div>
 
-        <input 
-          type="submit" 
-          value="Consultar Clima" 
+        <input
+          type="submit"
+          value="Consultar Clima"
         />
       </form>
     </div>

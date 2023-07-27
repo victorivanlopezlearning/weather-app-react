@@ -8,7 +8,7 @@ export default function Weather() {
 
   return (
     <div className="container weather-content">
-      <h2>Clima en {name}: </h2>
+      <h2>Clima en {name}</h2>
 
       <p className="weather-temp">
         {kelvinToCelsius(temp)}
